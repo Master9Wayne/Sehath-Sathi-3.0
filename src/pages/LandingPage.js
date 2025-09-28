@@ -1,18 +1,22 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // <-- Use useNavigate
-import { ShieldCheck, HeartPulse } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; 
+import { ShieldCheck, HeartPulse, Heart } from 'lucide-react'; // <-- Imported Heart icon
 
 const LandingPage = () => {
-  const navigate = useNavigate(); // <-- Get the navigate function
+  const navigate = useNavigate(); 
 
-  // Update handlers to navigate to our new routes
   const handleLogin = () => navigate('/login');
   const handleSignUp = () => navigate('/register');
 
   return (
     <div className="bg-brand-dark min-h-screen text-brand-light font-sans">
       <header className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Sehath Saathi</h1>
+        {/* === START OF CHANGE === */}
+        <div className="flex items-center">
+            <Heart className="w-6 h-6 text-brand-green mr-2" /> {/* <-- Added Heart Icon */}
+            <h1 className="text-2xl font-bold">Sehath Saathi</h1>
+        </div>
+        {/* === END OF CHANGE === */}
         <nav>
           <button onClick={handleLogin} className="text-base px-4 py-2 mr-2 hover:text-brand-green transition-colors">Login</button>
           <button onClick={handleSignUp} className="bg-brand-green text-brand-dark font-semibold px-4 py-2 rounded-md hover:bg-green-400 transition-colors">
@@ -62,3 +66,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
