@@ -1,0 +1,6 @@
+/* Set the base font and background color for the entire application */
+body {
+  background-color: #111827; /* Corresponds to brand-dark */
+  color: #f9fafb;           /* Corresponds to brand-light */
+  font-family: sans-serif;
+}
