@@ -1,3 +1,4 @@
+// fileName: patient.routes.js
 import { Router } from 'express';
 import { verifyJWT } from '../middleware/auth.middleware.js';
 import { 
@@ -12,8 +13,10 @@ const router = Router();
 
 router.route('/').post(verifyJWT, addPatient);
 router.route('/').get(verifyJWT, getPatientsForUser);
-router.route('/detail/:patientId').get(verifyJWT, getPatientById);
+// Consistency Fix: Using /detail/:id route for GET
+router.route('/detail/:id').get(verifyJWT, getPatientById); 
 router.route('/:id').put(verifyJWT, updatePatient);
+
 router.route('/:id').delete(verifyJWT, deletePatient);
 
 export default router;
